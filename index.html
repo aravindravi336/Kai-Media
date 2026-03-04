@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kai Media — Digital Marketing Agency</title>
+  <meta name="description" content="Kai Media is a digital marketing agency specializing in social media marketing, management, creatives, websites, and branding." />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">KAI<span>MEDIA</span></a>
+    <ul class="nav__links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
+    </ul>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-text" aria-hidden="true">KAI</div>
+    <div class="hero__content">
+      <div class="hero__tag reveal">Digital Agency</div>
+      <h1 class="hero__title reveal">
+        We Build<br/>
+        <span class="hero__title--outline">Brands</span><br/>
+        That Move.
+      </h1>
+      <p class="hero__sub reveal">Strategy. Creatives. Growth — for brands that refuse to blend in.</p>
+      <div class="hero__actions reveal">
+        <a href="#services" class="btn btn--primary">Our Services</a>
+        <a href="#work" class="btn btn--ghost">See Work ↓</a>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero__marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Social Media Marketing</span><span class="dot">·</span>
+        <span>Branding</span><span class="dot">·</span>
+        <span>Creatives</span><span class="dot">·</span>
+        <span>Web Design</span><span class="dot">·</span>
+        <span>Social Management</span><span class="dot">·</span>
+        <span>Digital Strategy</span><span class="dot">·</span>
+        <span>Social Media Marketing</span><span class="dot">·</span>
+        <span>Branding</span><span class="dot">·</span>
+        <span>Creatives</span><span class="dot">·</span>
+        <span>Web Design</span><span class="dot">·</span>
+        <span>Social Management</span><span class="dot">·</span>
+        <span>Digital Strategy</span><span class="dot">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What We Do</span>
+        <h2 class="section-title">Services Built<br/>for Impact</h2>
+      </div>
+      <div class="services__grid">
+        <div class="service-card reveal" data-num="01">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M13 20c0-3.866 3.134-7 7-7s7 3.134 7 7-3.134 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+          </div>
+          <h3>Digital Marketing</h3>
+          <p>Full-funnel strategies that convert audiences into loyal customers. Data-driven, results-obsessed.</p>
+          <a href="#contact" class="service-card__link">Learn more →</a>
+        </div>
+        <div class="service-card reveal" data-num="02">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="20" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M24 16h6M24 20h6M24 24h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Social Media Marketing</h3>
+          <p>Platform-native campaigns that spark conversation, drive engagement, and scale reach organically.</p>
+          <a href="#contact" class="service-card__link">Learn more →</a>
+        </div>
+        <div class="service-card reveal" data-num="03">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M8 32V16l12-8 12 8v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="15" y="22" width="10" height="10" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Social Media Management</h3>
+          <p>Consistent, on-brand presence across every channel — scheduling, community, reporting, all handled.</p>
+          <a href="#contact" class="service-card__link">Learn more →</a>
+        </div>
+        <div class="service-card reveal" data-num="04">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M10 30l6-6 4 4 6-8 6 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="6" width="28" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Creatives</h3>
+          <p>Scroll-stopping visuals, motion graphics, and ad creatives crafted with bold intention and precision.</p>
+          <a href="#contact" class="service-card__link">Learn more →</a>
+        </div>
+        <div class="service-card reveal" data-num="05">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="10" width="32" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 15h32M13 10v4M27 10v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 24h8M10 28h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Websites</h3>
+          <p>Fast, conversion-focused websites that look stunning and perform even better — built for the modern web.</p>
+          <a href="#contact" class="service-card__link">Learn more →</a>
+        </div>
+        <div class="service-card reveal" data-num="06">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M20 6l3 9h9l-7.5 5.5 3 9L20 25l-7.5 4.5 3-9L8 15h9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Branding</h3>
+          <p>Identity systems that tell your story — logos, typography, color, voice — built to last and scale.</p>
+          <a href="#contact" class="service-card__link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat reveal">
+          <div class="stat__num" data-count="50">0</div>
+          <div class="stat__label">Brands Scaled</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num" data-count="3">0</div>
+          <div class="stat__label">Years of Edge</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num" data-count="98">0</div>
+          <div class="stat__label">% Client Retention</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num" data-count="12">0</div>
+          <div class="stat__label">Industries Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Selected<br/>Work</h2>
+      </div>
+      <div class="work__grid">
+        <div class="work-item reveal" data-category="Branding">
+          <div class="work-item__img work-item__img--1">
+            <div class="work-item__overlay">
+              <span>Branding</span>
+              <h3>Nova Fitness Co.</h3>
+            </div>
+          </div>
+        </div>
+        <div class="work-item reveal" data-category="Social">
+          <div class="work-item__img work-item__img--2">
+            <div class="work-item__overlay">
+              <span>Social Media</span>
+              <h3>Urban Brew Café</h3>
+            </div>
+          </div>
+        </div>
+        <div class="work-item reveal" data-category="Website">
+          <div class="work-item__img work-item__img--3">
+            <div class="work-item__overlay">
+              <span>Website</span>
+              <h3>Luxe Interiors</h3>
+            </div>
+          </div>
+        </div>
+        <div class="work-item reveal" data-category="Creatives">
+          <div class="work-item__img work-item__img--4">
+            <div class="work-item__overlay">
+              <span>Creatives</span>
+              <h3>Pulse Streetwear</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__left reveal">
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-title">Small Team.<br/>Outsized<br/><span class="outline-text">Results.</span></h2>
+        </div>
+        <div class="about__right reveal">
+          <p class="about__lead">Kai Media is a lean, creative-first digital marketing agency. We don't do cookie-cutter. We do work that's built around your brand, your audience, and your goals.</p>
+          <p class="about__body">From the first post to the full rebrand, we're in it with you — thinking strategically, moving fast, and never settling for average.</p>
+          <div class="about__values">
+            <div class="value-pill">Creative First</div>
+            <div class="value-pill">Data Driven</div>
+            <div class="value-pill">Brand Obsessed</div>
+            <div class="value-pill">Results Focused</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner reveal">
+      <h2>Ready to Build<br/>Something <em>Real?</em></h2>
+      <a href="#contact" class="btn btn--white">Start a Project</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__left reveal">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Let's Talk<br/>About Your<br/>Brand.</h2>
+          <div class="contact__info">
+            <a href="mailto:hello@kaimedia.agency">hello@kaimedia.agency</a>
+            <a href="https://instagram.com/kaimedia" target="_blank">@kaimedia</a>
+          </div>
+        </div>
+        <form class="contact__form reveal" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="off"/>
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email Address" required autocomplete="off"/>
+            <label for="email">Email Address</label>
+          </div>
+          <div class="form-group">
+            <select id="service" name="service">
+              <option value="" disabled selected>Service Interested In</option>
+              <option>Digital Marketing</option>
+              <option>Social Media Marketing</option>
+              <option>Social Media Management</option>
+              <option>Creatives</option>
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Full Package</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Tell us about your project" rows="4" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#" class="footer__logo">KAI<span>MEDIA</span></a>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Kai Media. All rights reserved.</p>
+        <p>Built with intention.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

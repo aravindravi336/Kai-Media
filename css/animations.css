@@ -1,0 +1,175 @@
+/* ===========================
+   REVEAL ANIMATIONS
+   =========================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children for service cards */
+.services__grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.services__grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.services__grid .reveal:nth-child(4) { transition-delay: 0.08s; }
+.services__grid .reveal:nth-child(5) { transition-delay: 0.16s; }
+.services__grid .reveal:nth-child(6) { transition-delay: 0.24s; }
+
+.stats__grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+.stats__grid .reveal:nth-child(3) { transition-delay: 0.2s; }
+.stats__grid .reveal:nth-child(4) { transition-delay: 0.3s; }
+
+.work__grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+.work__grid .reveal:nth-child(3) { transition-delay: 0.1s; }
+.work__grid .reveal:nth-child(4) { transition-delay: 0.2s; }
+
+/* Page load hero animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hero initial load animations */
+.hero__tag {
+  animation: slideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.hero__title {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+.hero__sub {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+.hero__actions {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+
+.hero__bg-text {
+  animation: fadeIn 1.5s ease 1s both;
+}
+
+.hero__marquee {
+  animation: fadeIn 1s ease 1.2s both;
+}
+
+/* Nav animation */
+.nav {
+  animation: fadeIn 0.8s ease 0.1s both;
+}
+
+/* Hover line effect for nav links */
+.nav__links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 2px;
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+/* Service card hover shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Noise texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* Glow dot decorative element */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200,255,0,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  animation: pulsate 8s ease-in-out infinite;
+}
+
+@keyframes pulsate {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Accent line on section tags */
+.section-tag {
+  position: relative;
+}
+
+/* Work item scale */
+.work-item__img {
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-item__img:hover {
+  transform: scale(1.02);
+}
+
+/* Form focus glow */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  box-shadow: 0 0 0 3px rgba(200, 255, 0, 0.08);
+}
+
+/* Stats number count animation */
+.stat__num {
+  transition: color 0.3s;
+}
+
+.stat:hover .stat__num {
+  color: var(--white);
+}
+
+/* Button press */
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
