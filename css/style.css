@@ -229,11 +229,14 @@ body:has(button:hover) .cursor-follower {
 .nav__cta {
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   padding: 10px 24px !important;
   border: 1px solid var(--gray-border) !important;
   border-radius: 100px;
   color: var(--white) !important;
   transition: all 0.3s !important;
+  line-height: 1 !important;
+  height: fit-content !important;
 }
 
 .nav__cta:hover {
