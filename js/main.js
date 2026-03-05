@@ -125,36 +125,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- CONTACT FORM ----
-  const contactForm = document.getElementById('contactForm');
+ if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    const btn = contactForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      btn.style.opacity = '0.7';
-
-      // Simulate send (replace with real form handler like Netlify, Formspree, etc.)
-      setTimeout(() => {
-        btn.textContent = '✓ Message Sent!';
-        btn.style.background = '#4ade80';
-        btn.style.color = '#000';
-        contactForm.reset();
-
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.style.color = '';
-          btn.disabled = false;
-          btn.style.opacity = '';
-        }, 3000);
-      }, 1200);
-    });
-  }
+    // Let the form submit naturally to Formspree
+    // Then reset button after 3 seconds
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+      btn.style.opacity = '';
+    }, 3000);
+  });
+}
 
   // ---- PARALLAX HERO BG TEXT ----
   const bgText = document.querySelector('.hero__bg-text');
