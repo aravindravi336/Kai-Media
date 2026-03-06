@@ -1,0 +1,23 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Internal/temp folders
+mnt/
+tmp/
+temp/
+
+# Node
+node_modules/
+npm-debug.log
+
+# Environment
+.env
+.env.local
+
+# Wrangler
+.wrangler/
