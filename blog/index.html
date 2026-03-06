@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Kai Media</title>
+  <meta name="description" content="Digital marketing insights, social media tips, branding advice and agency news from Kai Media." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kaimedia.in/blog/" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="blog.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <a href="../index.html" class="nav__logo">KAI<span>MEDIA</span></a>
+    <ul class="nav__links">
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="../index.html#contact" class="nav__cta">Let's Talk</a></li>
+    </ul>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="../index.html#services" class="mobile-link">Services</a></li>
+      <li><a href="../index.html#work" class="mobile-link">Work</a></li>
+      <li><a href="../index.html#about" class="mobile-link">About</a></li>
+      <li><a href="/blog/" class="mobile-link">Blog</a></li>
+      <li><a href="../index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+      <div class="container">
+        <div class="blog-hero__inner">
+          <span class="section-tag">Insights</span>
+          <h1 class="blog-hero__title">Ideas &<br/><span class="outline-text">Insights</span></h1>
+          <p class="blog-hero__sub">Digital marketing tips, social media strategy, branding advice — straight from the Kai Media team.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid-section">
+      <div class="container">
+        <div class="blog-filter reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Digital Marketing">Digital Marketing</button>
+          <button class="filter-btn" data-filter="Social Media">Social Media</button>
+          <button class="filter-btn" data-filter="Branding">Branding</button>
+          <button class="filter-btn" data-filter="SEO">SEO</button>
+          <button class="filter-btn" data-filter="Agency Tips">Agency Tips</button>
+        </div>
+        <div class="blog-grid" id="blogGrid">
+          <!-- Posts loaded by JS -->
+          <div class="blog-loading">Loading posts...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="../index.html" class="footer__logo">KAI<span>MEDIA</span></a>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Kai Media. All rights reserved.</p>
+        <p>Built with intention.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>

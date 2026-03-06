@@ -1,0 +1,138 @@
+backend:
+  name: github
+  repo: aravindravi336/Kai-Media
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# Media files storage
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Site URL
+site_url: https://kaimedia.in
+display_url: https://kaimedia.in
+logo_url: https://kaimedia.in/assets/favicon.svg
+
+collections:
+
+  # ── SITE SETTINGS ──
+  - name: "settings"
+    label: "⚙️ Site Settings"
+    files:
+
+      - name: "general"
+        label: "General Settings"
+        file: "content/settings/general.json"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string", default: "Kai Media" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Digital Marketing Agency" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Instagram Handle", name: "instagram", widget: "string" }
+          - { label: "Twitter Handle", name: "twitter", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string", hint: "Include country code e.g. +919876543210" }
+
+      - name: "hero"
+        label: "Hero Section"
+        file: "content/settings/hero.json"
+        fields:
+          - { label: "Tag Line", name: "tag", widget: "string", default: "Digital Agency" }
+          - { label: "Heading Line 1", name: "heading1", widget: "string", default: "We Build" }
+          - { label: "Heading Line 2 (Outline)", name: "heading2", widget: "string", default: "Brands" }
+          - { label: "Heading Line 3", name: "heading3", widget: "string", default: "That Move." }
+          - { label: "Subheading", name: "sub", widget: "string", default: "Strategy. Creatives. Growth — for brands that refuse to blend in." }
+          - { label: "Primary Button Text", name: "cta_primary", widget: "string", default: "Our Services" }
+          - { label: "Secondary Button Text", name: "cta_secondary", widget: "string", default: "See Work ↓" }
+
+      - name: "about"
+        label: "About Section"
+        file: "content/settings/about.json"
+        fields:
+          - { label: "Heading Line 1", name: "heading1", widget: "string", default: "Small Team." }
+          - { label: "Heading Line 2", name: "heading2", widget: "string", default: "Outsized" }
+          - { label: "Heading Line 3 (Outline)", name: "heading3", widget: "string", default: "Results." }
+          - { label: "Lead Paragraph", name: "lead", widget: "text" }
+          - { label: "Body Paragraph", name: "body", widget: "text" }
+          - label: "Value Pills"
+            name: "values"
+            widget: "list"
+            field: { label: "Value", name: "value", widget: "string" }
+
+      - name: "stats"
+        label: "Stats Section"
+        file: "content/settings/stats.json"
+        fields:
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "number" }
+              - { label: "Label", name: "label", widget: "string" }
+
+      - name: "seo"
+        label: "SEO Settings"
+        file: "content/settings/seo.json"
+        fields:
+          - { label: "Meta Title", name: "meta_title", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string" }
+          - { label: "OG Image", name: "og_image", widget: "image", required: false }
+          - { label: "Google Analytics ID", name: "ga_id", widget: "string", required: false, hint: "e.g. G-XXXXXXXXXX" }
+
+  # ── SERVICES ──
+  - name: "services"
+    label: "🛠️ Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Order", name: "order", widget: "number", default: 1 }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+
+  # ── WORK / PORTFOLIO ──
+  - name: "work"
+    label: "💼 Portfolio"
+    folder: "content/work"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Branding", "Social Media", "Website", "Creatives", "Digital Marketing", "Full Package"] }
+      - { label: "Client Name", name: "client", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Project URL", name: "url", widget: "string", required: false }
+      - { label: "Order", name: "order", widget: "number", default: 1 }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+
+  # ── BLOG ──
+  - name: "blog"
+    label: "📝 Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: title
+    preview_path: "blog/{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Kai Media" }
+      - { label: "Category", name: "category", widget: "select", options: ["Digital Marketing", "Social Media", "Branding", "Web Design", "SEO", "Agency Tips"] }
+      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Short summary shown on blog listing page — also used for SEO meta description" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Published", name: "published", widget: "boolean", default: false }
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "SEO Title", name: "title", widget: "string", required: false, hint: "Leave blank to use post title" }
+          - { label: "SEO Description", name: "description", widget: "text", required: false, hint: "Leave blank to use excerpt" }
+          - { label: "Focus Keyword", name: "keyword", widget: "string", required: false }
