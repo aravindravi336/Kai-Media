@@ -1,36 +1,31 @@
+// tina/config.js
 import { defineConfig } from "tinacms";
-
-export default defineConfig({
+var config_default = defineConfig({
   branch: "main",
-
   // Get this from tina.io dashboard after connecting your repo
   clientId: "380d1705-731f-4b71-9de5-27f802eb2e62",
   token: "99eae15382ba19386efd06dacd12fcdd0d36280b",
-
   build: {
     outputFolder: "admin",
-    publicFolder: "./",
+    publicFolder: "./"
   },
-
   media: {
     tina: {
       mediaRoot: "assets/uploads",
-      publicFolder: "./",
-    },
+      publicFolder: "./"
+    }
   },
-
   schema: {
     collections: [
-
       // ── SITE SETTINGS ──
       {
         name: "settings",
-        label: "⚙️ Site Settings",
+        label: "\u2699\uFE0F Site Settings",
         path: "content",
         format: "json",
         ui: {
           allowedActions: { create: false, delete: false },
-          global: true,
+          global: true
         },
         match: { include: "general" },
         fields: [
@@ -41,19 +36,18 @@ export default defineConfig({
           { type: "string", name: "instagram", label: "Instagram Handle" },
           { type: "string", name: "twitter", label: "Twitter Handle" },
           { type: "string", name: "linkedin", label: "LinkedIn URL" },
-          { type: "string", name: "whatsapp", label: "WhatsApp Number" },
-        ],
+          { type: "string", name: "whatsapp", label: "WhatsApp Number" }
+        ]
       },
-
       // ── HERO ──
       {
         name: "hero",
-        label: "🏠 Hero Section",
+        label: "\u{1F3E0} Hero Section",
         path: "content",
         format: "json",
         ui: {
           allowedActions: { create: false, delete: false },
-          global: true,
+          global: true
         },
         match: { include: "hero" },
         fields: [
@@ -63,19 +57,18 @@ export default defineConfig({
           { type: "string", name: "heading3", label: "Heading Line 3" },
           { type: "string", name: "sub", label: "Subheading" },
           { type: "string", name: "cta_primary", label: "Primary Button Text" },
-          { type: "string", name: "cta_secondary", label: "Secondary Button Text" },
-        ],
+          { type: "string", name: "cta_secondary", label: "Secondary Button Text" }
+        ]
       },
-
       // ── ABOUT ──
       {
         name: "about",
-        label: "👤 About Section",
+        label: "\u{1F464} About Section",
         path: "content",
         format: "json",
         ui: {
           allowedActions: { create: false, delete: false },
-          global: true,
+          global: true
         },
         match: { include: "about" },
         fields: [
@@ -85,43 +78,47 @@ export default defineConfig({
           { type: "string", name: "lead", label: "Lead Paragraph", ui: { component: "textarea" } },
           { type: "string", name: "body", label: "Body Paragraph", ui: { component: "textarea" } },
           {
-            type: "object", name: "values", label: "Value Pills", list: true,
-            fields: [{ type: "string", name: "value", label: "Value" }],
-          },
-        ],
+            type: "object",
+            name: "values",
+            label: "Value Pills",
+            list: true,
+            fields: [{ type: "string", name: "value", label: "Value" }]
+          }
+        ]
       },
-
       // ── STATS ──
       {
         name: "stats",
-        label: "📊 Stats",
+        label: "\u{1F4CA} Stats",
         path: "content",
         format: "json",
         ui: {
           allowedActions: { create: false, delete: false },
-          global: true,
+          global: true
         },
         match: { include: "stats" },
         fields: [
           {
-            type: "object", name: "stats", label: "Stats", list: true,
+            type: "object",
+            name: "stats",
+            label: "Stats",
+            list: true,
             fields: [
               { type: "number", name: "number", label: "Number" },
-              { type: "string", name: "label", label: "Label" },
-            ],
-          },
-        ],
+              { type: "string", name: "label", label: "Label" }
+            ]
+          }
+        ]
       },
-
       // ── SEO ──
       {
         name: "seo",
-        label: "🔍 SEO Settings",
+        label: "\u{1F50D} SEO Settings",
         path: "content",
         format: "json",
         ui: {
           allowedActions: { create: false, delete: false },
-          global: true,
+          global: true
         },
         match: { include: "seo" },
         fields: [
@@ -129,69 +126,75 @@ export default defineConfig({
           { type: "string", name: "meta_description", label: "Meta Description", ui: { component: "textarea" } },
           { type: "string", name: "keywords", label: "Keywords" },
           { type: "image", name: "og_image", label: "OG Image" },
-          { type: "string", name: "ga_id", label: "Google Analytics ID" },
-        ],
+          { type: "string", name: "ga_id", label: "Google Analytics ID" }
+        ]
       },
-
       // ── BLOG ──
       {
         name: "blog",
-        label: "📝 Blog Posts",
+        label: "\u{1F4DD} Blog Posts",
         path: "blog",
         format: "md",
         ui: {
           filename: {
             readonly: false,
             slugify: (values) => {
-              const date = new Date().toISOString().split("T")[0];
+              const date = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];
               return `${date}-${(values?.title || "post").toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`;
-            },
-          },
+            }
+          }
         },
         fields: [
           { type: "string", name: "title", label: "Title", isTitle: true, required: true },
           { type: "datetime", name: "date", label: "Publish Date" },
           { type: "string", name: "author", label: "Author" },
           {
-            type: "string", name: "category", label: "Category",
-            options: ["Digital Marketing", "Social Media", "Branding", "Web Design", "SEO", "Agency Tips"],
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: ["Digital Marketing", "Social Media", "Branding", "Web Design", "SEO", "Agency Tips"]
           },
           { type: "image", name: "cover_image", label: "Cover Image" },
           { type: "string", name: "excerpt", label: "Excerpt", ui: { component: "textarea" } },
           { type: "rich-text", name: "body", label: "Body", isBody: true },
           { type: "boolean", name: "published", label: "Published" },
           {
-            type: "object", name: "seo", label: "SEO",
+            type: "object",
+            name: "seo",
+            label: "SEO",
             fields: [
               { type: "string", name: "title", label: "SEO Title" },
               { type: "string", name: "description", label: "SEO Description", ui: { component: "textarea" } },
-              { type: "string", name: "keyword", label: "Focus Keyword" },
-            ],
-          },
-        ],
+              { type: "string", name: "keyword", label: "Focus Keyword" }
+            ]
+          }
+        ]
       },
-
       // ── PORTFOLIO ──
       {
         name: "work",
-        label: "💼 Portfolio",
+        label: "\u{1F4BC} Portfolio",
         path: "content/work",
         format: "json",
         fields: [
           { type: "string", name: "title", label: "Project Title", isTitle: true, required: true },
           {
-            type: "string", name: "category", label: "Category",
-            options: ["Branding", "Social Media", "Website", "Creatives", "Digital Marketing", "Full Package"],
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: ["Branding", "Social Media", "Website", "Creatives", "Digital Marketing", "Full Package"]
           },
           { type: "string", name: "client", label: "Client Name" },
           { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
           { type: "image", name: "image", label: "Cover Image" },
           { type: "string", name: "url", label: "Project URL" },
           { type: "number", name: "order", label: "Display Order" },
-          { type: "boolean", name: "published", label: "Published" },
-        ],
-      },
-
-    ],
-  },
+          { type: "boolean", name: "published", label: "Published" }
+        ]
+      }
+    ]
+  }
 });
+export {
+  config_default as default
+};

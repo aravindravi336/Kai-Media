@@ -1,0 +1,83 @@
+fragment SettingsParts on Settings {
+  __typename
+  site_title
+  tagline
+  description
+  email
+  instagram
+  twitter
+  linkedin
+  whatsapp
+}
+
+fragment HeroParts on Hero {
+  __typename
+  tag
+  heading1
+  heading2
+  heading3
+  sub
+  cta_primary
+  cta_secondary
+}
+
+fragment AboutParts on About {
+  __typename
+  heading1
+  heading2
+  heading3
+  lead
+  body
+  values {
+    __typename
+    value
+  }
+}
+
+fragment StatsParts on Stats {
+  __typename
+  stats {
+    __typename
+    number
+    label
+  }
+}
+
+fragment SeoParts on Seo {
+  __typename
+  meta_title
+  meta_description
+  keywords
+  og_image
+  ga_id
+}
+
+fragment BlogParts on Blog {
+  __typename
+  title
+  date
+  author
+  category
+  cover_image
+  excerpt
+  body
+  published
+  seo {
+    __typename
+    title
+    description
+    keyword
+  }
+}
+
+fragment WorkParts on Work {
+  __typename
+  title
+  category
+  client
+  description
+  image
+  url
+  order
+  published
+}

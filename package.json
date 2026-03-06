@@ -1,0 +1,27 @@
+{
+  "name": "kai-media",
+  "version": "1.0.0",
+  "description": "A modern, minimal website for Kai Media digital marketing agency.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tinacms dev -c \"npx http-server -p 5173\"",
+    "build": "tinacms build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aravindravi336/Kai-Media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/aravindravi336/Kai-Media/issues"
+  },
+  "homepage": "https://github.com/aravindravi336/Kai-Media#readme",
+  "dependencies": {
+    "@tinacms/cli": "^2.1.9",
+    "tinacms": "^3.6.1"
+  }
+}
