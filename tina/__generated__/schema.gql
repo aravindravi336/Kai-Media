@@ -54,30 +54,12 @@ type Query {
   collections: [Collection!]!
   node(id: String): Node!
   document(collection: String, relativePath: String): DocumentNode!
-  settings(relativePath: String): Settings!
-  settingsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: SettingsFilter): SettingsConnection!
-  hero(relativePath: String): Hero!
-  heroConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HeroFilter): HeroConnection!
-  about(relativePath: String): About!
-  aboutConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: AboutFilter): AboutConnection!
-  stats(relativePath: String): Stats!
-  statsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: StatsFilter): StatsConnection!
-  seo(relativePath: String): Seo!
-  seoConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: SeoFilter): SeoConnection!
-  blog(relativePath: String): Blog!
-  blogConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: BlogFilter): BlogConnection!
-  work(relativePath: String): Work!
-  workConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: WorkFilter): WorkConnection!
+  post(relativePath: String): Post!
+  postConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostFilter): PostConnection!
 }
 
 input DocumentFilter {
-  settings: SettingsFilter
-  hero: HeroFilter
-  about: AboutFilter
-  stats: StatsFilter
-  seo: SeoFilter
-  blog: BlogFilter
-  work: WorkFilter
+  post: PostFilter
 }
 
 type DocumentConnectionEdges {
@@ -103,17 +85,11 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Settings | Hero | About | Stats | Seo | Blog | Work | Folder
+union DocumentNode = Post | Folder
 
-type Settings implements Node & Document {
-  site_title: String
-  tagline: String
-  description: String
-  email: String
-  instagram: String
-  twitter: String
-  linkedin: String
-  whatsapp: String
+type Post implements Node & Document {
+  title: String!
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -126,284 +102,26 @@ input StringFilter {
   in: [String]
 }
 
-input SettingsFilter {
-  site_title: StringFilter
-  tagline: StringFilter
-  description: StringFilter
-  email: StringFilter
-  instagram: StringFilter
-  twitter: StringFilter
-  linkedin: StringFilter
-  whatsapp: StringFilter
-}
-
-type SettingsConnectionEdges {
-  cursor: String!
-  node: Settings
-}
-
-type SettingsConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [SettingsConnectionEdges]
-}
-
-type Hero implements Node & Document {
-  tag: String
-  heading1: String
-  heading2: String
-  heading3: String
-  sub: String
-  cta_primary: String
-  cta_secondary: String
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input HeroFilter {
-  tag: StringFilter
-  heading1: StringFilter
-  heading2: StringFilter
-  heading3: StringFilter
-  sub: StringFilter
-  cta_primary: StringFilter
-  cta_secondary: StringFilter
-}
-
-type HeroConnectionEdges {
-  cursor: String!
-  node: Hero
-}
-
-type HeroConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [HeroConnectionEdges]
-}
-
-type AboutValues {
-  value: String
-}
-
-type About implements Node & Document {
-  heading1: String
-  heading2: String
-  heading3: String
-  lead: String
-  body: String
-  values: [AboutValues]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input AboutValuesFilter {
-  value: StringFilter
-}
-
-input AboutFilter {
-  heading1: StringFilter
-  heading2: StringFilter
-  heading3: StringFilter
-  lead: StringFilter
-  body: StringFilter
-  values: AboutValuesFilter
-}
-
-type AboutConnectionEdges {
-  cursor: String!
-  node: About
-}
-
-type AboutConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [AboutConnectionEdges]
-}
-
-type StatsStats {
-  number: Float
-  label: String
-}
-
-type Stats implements Node & Document {
-  stats: [StatsStats]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input NumberFilter {
-  lt: Float
-  lte: Float
-  gte: Float
-  gt: Float
-  eq: Float
-  exists: Boolean
-  in: [Float]
-}
-
-input StatsStatsFilter {
-  number: NumberFilter
-  label: StringFilter
-}
-
-input StatsFilter {
-  stats: StatsStatsFilter
-}
-
-type StatsConnectionEdges {
-  cursor: String!
-  node: Stats
-}
-
-type StatsConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [StatsConnectionEdges]
-}
-
-type Seo implements Node & Document {
-  meta_title: String
-  meta_description: String
-  keywords: String
-  og_image: String
-  ga_id: String
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input ImageFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
-}
-
-input SeoFilter {
-  meta_title: StringFilter
-  meta_description: StringFilter
-  keywords: StringFilter
-  og_image: ImageFilter
-  ga_id: StringFilter
-}
-
-type SeoConnectionEdges {
-  cursor: String!
-  node: Seo
-}
-
-type SeoConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [SeoConnectionEdges]
-}
-
-type BlogSeo {
-  title: String
-  description: String
-  keyword: String
-}
-
-type Blog implements Node & Document {
-  title: String!
-  date: String
-  author: String
-  category: String
-  cover_image: String
-  excerpt: String
-  body: JSON
-  published: Boolean
-  seo: BlogSeo
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input DatetimeFilter {
-  after: String
-  before: String
-  eq: String
-  exists: Boolean
-  in: [String]
-}
-
 input RichTextFilter {
   startsWith: String
   eq: String
   exists: Boolean
 }
 
-input BooleanFilter {
-  eq: Boolean
-  exists: Boolean
-}
-
-input BlogSeoFilter {
+input PostFilter {
   title: StringFilter
-  description: StringFilter
-  keyword: StringFilter
-}
-
-input BlogFilter {
-  title: StringFilter
-  date: DatetimeFilter
-  author: StringFilter
-  category: StringFilter
-  cover_image: ImageFilter
-  excerpt: StringFilter
   body: RichTextFilter
-  published: BooleanFilter
-  seo: BlogSeoFilter
 }
 
-type BlogConnectionEdges {
+type PostConnectionEdges {
   cursor: String!
-  node: Blog
+  node: Post
 }
 
-type BlogConnection implements Connection {
+type PostConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
-  edges: [BlogConnectionEdges]
-}
-
-type Work implements Node & Document {
-  title: String!
-  category: String
-  client: String
-  description: String
-  image: String
-  url: String
-  order: Float
-  published: Boolean
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input WorkFilter {
-  title: StringFilter
-  category: StringFilter
-  client: StringFilter
-  description: StringFilter
-  image: ImageFilter
-  url: StringFilter
-  order: NumberFilter
-  published: BooleanFilter
-}
-
-type WorkConnectionEdges {
-  cursor: String!
-  node: Work
-}
-
-type WorkConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [WorkConnectionEdges]
+  edges: [PostConnectionEdges]
 }
 
 type Mutation {
@@ -412,121 +130,22 @@ type Mutation {
   deleteDocument(collection: String, relativePath: String!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   createFolder(collection: String, relativePath: String!): DocumentNode!
-  updateSettings(relativePath: String!, params: SettingsMutation!): Settings!
-  createSettings(relativePath: String!, params: SettingsMutation!): Settings!
-  updateHero(relativePath: String!, params: HeroMutation!): Hero!
-  createHero(relativePath: String!, params: HeroMutation!): Hero!
-  updateAbout(relativePath: String!, params: AboutMutation!): About!
-  createAbout(relativePath: String!, params: AboutMutation!): About!
-  updateStats(relativePath: String!, params: StatsMutation!): Stats!
-  createStats(relativePath: String!, params: StatsMutation!): Stats!
-  updateSeo(relativePath: String!, params: SeoMutation!): Seo!
-  createSeo(relativePath: String!, params: SeoMutation!): Seo!
-  updateBlog(relativePath: String!, params: BlogMutation!): Blog!
-  createBlog(relativePath: String!, params: BlogMutation!): Blog!
-  updateWork(relativePath: String!, params: WorkMutation!): Work!
-  createWork(relativePath: String!, params: WorkMutation!): Work!
+  updatePost(relativePath: String!, params: PostMutation!): Post!
+  createPost(relativePath: String!, params: PostMutation!): Post!
 }
 
 input DocumentUpdateMutation {
-  settings: SettingsMutation
-  hero: HeroMutation
-  about: AboutMutation
-  stats: StatsMutation
-  seo: SeoMutation
-  blog: BlogMutation
-  work: WorkMutation
+  post: PostMutation
   relativePath: String
 }
 
 input DocumentMutation {
-  settings: SettingsMutation
-  hero: HeroMutation
-  about: AboutMutation
-  stats: StatsMutation
-  seo: SeoMutation
-  blog: BlogMutation
-  work: WorkMutation
+  post: PostMutation
 }
 
-input SettingsMutation {
-  site_title: String
-  tagline: String
-  description: String
-  email: String
-  instagram: String
-  twitter: String
-  linkedin: String
-  whatsapp: String
-}
-
-input HeroMutation {
-  tag: String
-  heading1: String
-  heading2: String
-  heading3: String
-  sub: String
-  cta_primary: String
-  cta_secondary: String
-}
-
-input AboutValuesMutation {
-  value: String
-}
-
-input AboutMutation {
-  heading1: String
-  heading2: String
-  heading3: String
-  lead: String
-  body: String
-  values: [AboutValuesMutation]
-}
-
-input StatsStatsMutation {
-  number: Float
-  label: String
-}
-
-input StatsMutation {
-  stats: [StatsStatsMutation]
-}
-
-input SeoMutation {
-  meta_title: String
-  meta_description: String
-  keywords: String
-  og_image: String
-  ga_id: String
-}
-
-input BlogSeoMutation {
+input PostMutation {
   title: String
-  description: String
-  keyword: String
-}
-
-input BlogMutation {
-  title: String
-  date: String
-  author: String
-  category: String
-  cover_image: String
-  excerpt: String
   body: JSON
-  published: Boolean
-  seo: BlogSeoMutation
-}
-
-input WorkMutation {
-  title: String
-  category: String
-  client: String
-  description: String
-  image: String
-  url: String
-  order: Float
-  published: Boolean
 }
 
 schema {

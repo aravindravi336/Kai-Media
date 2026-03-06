@@ -21,3 +21,5 @@ npm-debug.log
 
 # Wrangler
 .wrangler/
+
+node_modules
