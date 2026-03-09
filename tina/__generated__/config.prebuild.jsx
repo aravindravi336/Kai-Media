@@ -3,7 +3,7 @@ import { defineConfig } from "tinacms";
 var config_default = defineConfig({
   branch: "main",
   clientId: "8afef8f6-3a40-4dc9-bf3e-7950cfe015ba",
-  token: "9b3830715db60c5c231e025c77d326da755e1ac2",
+  token: "47503e3644aefa890b624edb5f92b0dd0e780a5a",
   build: {
     outputFolder: "admin",
     publicFolder: "."
