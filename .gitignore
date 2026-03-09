@@ -12,11 +12,12 @@ tmp/
 temp/
 
 
-admin/
+
 
 # Node
 node_modules/
 npm-debug.log
+
 
 # Environment
 .env
