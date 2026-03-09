@@ -4,13 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kai Media — Digital Marketing Agency</title>
-  <meta name="description" content="Kai Media is a digital marketing agency specializing in social media marketing, management, creatives, websites, and branding." />
+  <meta name="description" content="Kai Media is a digital marketing agency specializing in social media marketing, social media management, creatives, website design, and branding. We build brands that move." />
+  <meta name="keywords" content="digital marketing agency, social media marketing, social media management, branding agency, creative agency, website design, content marketing" />
+  <meta name="author" content="Kai Media" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kaimedia.agency/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kaimedia.agency/" />
+  <meta property="og:title" content="Kai Media — Digital Marketing Agency" />
+  <meta property="og:description" content="Kai Media is a digital marketing agency specializing in social media marketing, social media management, creatives, website design, and branding. We build brands that move." />
+  <meta property="og:image" content="https://kaimedia.agency/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Kai Media" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://kaimedia.agency/" />
+  <meta name="twitter:title" content="Kai Media — Digital Marketing Agency" />
+  <meta name="twitter:description" content="Strategy. Creatives. Growth — for brands that refuse to blend in." />
+  <meta name="twitter:image" content="https://kaimedia.agency/assets/og-image.jpg" />
+  <meta name="twitter:site" content="@kaimedia" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#0a0a0a" />
+
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+  <!-- Structured Data / Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Kai Media",
+    "description": "Digital marketing agency specializing in social media marketing, social media management, creatives, website design, and branding.",
+    "url": "https://kaimedia.agency",
+    "logo": "https://kaimedia.agency/assets/favicon.svg",
+    "image": "https://kaimedia.agency/assets/og-image.jpg",
+    "email": "hello@kaimedia.agency",
+    "sameAs": [
+      "https://instagram.com/kaimedia",
+      "https://twitter.com/kaimedia",
+      "https://linkedin.com/company/kaimedia"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Marketing Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Management" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Creative Design" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity" } }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -19,15 +81,14 @@
   <div class="cursor-follower" id="cursorFollower"></div>
 
   <!-- Nav -->
-  <nav class="nav" id="nav">
+  <nav class="nav" id="nav" aria-label="Main navigation">
     <a href="#" class="nav__logo">KAI<span>MEDIA</span></a>
     <ul class="nav__links">
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#about">Blog</a></li>
-      <li><a href="#contact" class="nav__cta">Let's Talk</a>
-      </li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
     </ul>
     <button class="nav__hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span>
@@ -40,20 +101,21 @@
       <li><a href="#services" class="mobile-link">Services</a></li>
       <li><a href="#work" class="mobile-link">Work</a></li>
       <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="/blog/" class="mobile-link">Blog</a></li>
       <li><a href="#contact" class="mobile-link">Contact</a></li>
-      <li><a href="#contact" class="mobile-link">Blog</a></li>
     </ul>
   </div>
 
   <!-- Hero -->
+  <main>
   <section class="hero" id="hero">
     <div class="hero__bg-text" aria-hidden="true">KAI</div>
     <div class="hero__content">
       <div class="hero__tag reveal">Digital Agency</div>
       <h1 class="hero__title reveal">
-        We Build<br/>
+        <span class="hero__title-line1">We Build</span><br/>
         <span class="hero__title--outline">Brands</span><br/>
-        That Move.
+        <span class="hero__title-line3">That Move.</span>
       </h1>
       <p class="hero__sub reveal">Strategy. Creatives. Growth — for brands that refuse to blend in.</p>
       <div class="hero__actions reveal">
@@ -217,7 +279,7 @@
       <div class="about__inner">
         <div class="about__left reveal">
           <span class="section-tag">Who We Are</span>
-          <h2 class="section-title">Small Team.<br/>Outsized<br/><span class="outline-text">Results.</span></h2>
+          <h2 class="section-title"><span class="about__heading-line1">Small Team.</span><br/><span class="about__heading-line2">Outsized</span><br/><span class="outline-text about__heading-line3">Results.</span></h2>
         </div>
         <div class="about__right reveal">
           <p class="about__lead">Kai Media is a lean, creative-first digital marketing agency. We don't do cookie-cutter. We do work that's built around your brand, your audience, and your goals.</p>
@@ -249,11 +311,11 @@
           <span class="section-tag">Get In Touch</span>
           <h2 class="section-title">Let's Talk<br/>About Your<br/>Brand.</h2>
           <div class="contact__info">
-            <a href="mailto:hello@kaimedia.agency">mail@kaimedia.in</a>
+            <a href="/cdn-cgi/l/email-protection#7018151c1c1f301b11191d151419115e1117151e1309"><span class="__cf_email__" data-cfemail="fd9598919192bd969c94909899949cd39c9a98939e84">[email&#160;protected]</span></a>
             <a href="https://instagram.com/kaimedia" target="_blank">@kaimedia</a>
           </div>
         </div>
-        <form  class="contact__form reveal" id="contactForm" action="https://formspree.io/f/mnjgajyz" method="POST">
+        <form class="contact__form reveal" id="contactForm">
           <div class="form-group">
             <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="off"/>
             <label for="name">Your Name</label>
@@ -284,6 +346,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -296,12 +360,12 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2026 Kai Media. All rights reserved.</p>
-        <p>Built with intention.</p>
+        <p>© 2026 Kai Media. All rights re        <p>© 2026 Kai Media. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/content-loader.js"></script>
 </body>
 </html>
