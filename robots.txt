@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kaimedia.agency/sitemap.xml
+Sitemap: https://kaimedia.in/sitemap.xml
