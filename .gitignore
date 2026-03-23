@@ -27,3 +27,8 @@ npm-debug.log
 .wrangler/
 
 node_modules
+
+node_modules/
+.env
+.env.*
+tina/__generated__/
