@@ -125,22 +125,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- CONTACT FORM ----
- if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    btn.style.opacity = '0.7';
+  const contactForm = document.getElementById('contactForm');
 
-    // Let the form submit naturally to Formspree
-    // Then reset button after 3 seconds
-    setTimeout(() => {
-      btn.textContent = 'Send Message →';
-      btn.disabled = false;
-      btn.style.opacity = '';
-    }, 3000);
-  });
-}
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+
+      // Let the form submit naturally to Formspree
+      // Then reset button after 3 seconds
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.disabled = false;
+        btn.style.opacity = '';
+      }, 3000);
+    });
+  }
 
   // ---- PARALLAX HERO BG TEXT ----
   const bgText = document.querySelector('.hero__bg-text');
